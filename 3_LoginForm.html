@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function uname()
+        {
+           let username=document.getElementById("username").value;
+            if(username.length<5)
+            {
+                alert("username should be greater than 5 characters");
+                document.getElementById("s1").innerHTML="Name cannot be less than 5 characters"
+                return false;
+
+                
+            }
+            else
+            return true;
+        }
+        function passw()
+        {
+           let pass=document.getElementById("pass").value;
+            if(pass.length<5)
+        {
+            document.getElementById("s2").innerHTML="Password not of correct length"
+            return false;
+        }
+        else 
+        return true;
+        }
+        function login()
+        {
+            if(uname() && passw())
+            return true;
+            else 
+            return false;
+        }
+
+    </script>
+</head>
+<body>
+    <form action="">
+       username: <input type="text" name="username" id="username" required><span id="s1"></span><p>
+       password: <input type="text" name="pass" id="pass" required><span id ="s2"></span>
+       <button type="submit" onclick="login()">Login</button>
+    </form>
+    
+</body>
+</html>
