@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Sum Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function calculateSum(row) {
+            var col1 = document.getElementById('col1_' + row).value || 1;
+            var col2 = document.getElementById('col2_' + row).value || 1;
+            var sum = parseFloat(col1) * parseFloat(col2);
+
+            if (!isNaN(sum)) {
+                document.getElementById('col3_' + row).value = sum;
+            } else {
+                document.getElementById('col3_' + row).value = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Auto Sum Table Example</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Sum (Column 3)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" id="col1_1" oninput="calculateSum(1)"></td>
+                <td><input type="number" id="col2_1" oninput="calculateSum(1)"></td>
+                <td><input type="number" id="col3_1" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="col1_2" oninput="calculateSum(2)"></td>
+                <td><input type="number" id="col2_2" oninput="calculateSum(2)"></td>
+                <td><input type="number" id="col3_2" readonly></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="col1_3" oninput="calculateSum(3)"></td>
+                <td><input type="number" id="col2_3" oninput="calculateSum(3)"></td>
+                <td><input type="number" id="col3_3" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
