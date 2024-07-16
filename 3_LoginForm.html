@@ -40,10 +40,10 @@
     </script>
 </head>
 <body>
-    <form action="">
+    <form onsubmit="return login()">
        username: <input type="text" name="username" id="username" required><span id="s1"></span><p>
-       password: <input type="text" name="pass" id="pass" required><span id ="s2"></span>
-       <button type="submit" onclick="login()">Login</button>
+       password: <input type="text" name="pass" id="pass" required><span id ="s2"></span><p>
+    <input type="submit" value="login"> 
     </form>
     
 </body>
